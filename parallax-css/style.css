@@ -1,0 +1,55 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    position: relative;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+div .screen {
+    height: 100vh;
+}
+
+.on-ice {
+    /* background-color: rgb(244, 224, 77); */
+    background-image: url("300849.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.ice {
+    background-image: url("300857.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#two {
+    background-color: rgb(242, 237, 111);
+}
+
+#three {
+    background-color: rgb(206, 227, 151);
+}
+
+#four {
+    background-color: rgb(141, 177, 171);
+}
+
+#five {
+    background-color: rgb(88, 119, 146);
+}

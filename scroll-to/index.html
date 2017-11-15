@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Scroll To Anchor</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+
+        // Fade in anchor text on click 
+        $(document).ready(function () {
+            $("a").click(function () {
+                $("#slow2").fadeIn(3000);
+            });
+        })
+
+
+    </script>
+
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+            position: relative;
+        }
+
+        .screen {
+            height: 100vh;
+        }
+
+        /* Fade in animation keyframe */
+        @keyframes slowAppear {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #slow {
+            animation-fill-mode: forwards;
+            animation: slowAppear 3s;
+        }
+
+        #slow2 {
+            display: none;
+        }
+
+        p {
+            font-size: 5em;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            top: 40%;
+        }
+
+        #one {
+            background-color: red;
+            color: white;
+        }
+
+        #two {
+            background-color: white;
+            color: black;
+        }
+
+        #three {
+            background-color: blue;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #one a:visited {
+            color: white;
+        }
+
+        #two a:visited {
+            color: black;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="screen" id="one">
+        <p id="slow">
+            <a href="#two">One</a>
+        </p>
+    </div>
+
+    <div class="screen" id="two">
+        <p id="slow2">
+            <a href="#three">Two</a>
+        </p>
+    </div>
+
+    <div class="screen" id="three">
+        <p id="slow3">Three</p>
+    </div>
+
+</body>
+
+</html>
